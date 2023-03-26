@@ -30,7 +30,7 @@ const CartProvider = ({ children }) => {
       payload: { id, name, price, image, stock, amount, singleproduct },
     });
   };
-
+  // console.log(state.cart.amount);
   // increment and decrement the product
 
   const setDecrease = (id) => {
