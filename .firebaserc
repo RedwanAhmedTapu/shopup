@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "ecomsitereact"
-  }
+    "default": "ecomsitereact",
+    "y": "shopup-cc284"
+  },
+  "targets": {},
+  "etags": {}
 }
