@@ -56,59 +56,59 @@ const cartReducer = (state, action) => {
     };
   }
 
-  // if (action.type === "CART_ITEM_PRICE_TOTAL") {
-  //   let { total_item, total_price } = state.cart.reduce(
-  //     (accum, curElem) => {
-  //       let { price, amount } = curElem;
-  //       console.log(accum);
+  if (action.type === "CART_ITEM_PRICE_TOTAL") {
+    let { total_item, total_price } = state.cart.reduce(
+      (accum, curElem) => {
+        let { price, amount } = curElem;
+        console.log(accum);
 
-  //       accum.total_item += amount;
+        accum.total_item += amount;
 
-  //       accum.total_price += price * amount;
-  //       console.log(accum.total_item);
-  //       console.log(accum.total_price);
+        accum.total_price += price * amount;
+        console.log(accum.total_item);
+        console.log(accum.total_price);
 
-  //       return accum;
-  //     },
-  //     {
-  //       total_item: 0,
-  //       total_price: 0,
-  //     }
-  //   );
-  //   return {
-  //     ...state,
-  //     total_item,
-  //     total_price,
-  //   };
-  // }
-
-  if (action.type === "CART_TOTAL_PRICE") {
-    let updatedVal = state.cart.reduce((initialVal, curElem) => {
-      let { amount } = curElem;
-
-      initialVal = initialVal + amount;
-
-      console.log(initialVal);
-
-      return initialVal;
-    }, 0);
-
-    let FormatPrice = state.cart.reduce((initialVal, curElem) => {
-      let { price, amount } = curElem;
-
-      initialVal = initialVal + price * amount;
-
-      console.log(initialVal);
-
-      return initialVal;
-    }, 0);
+        return accum;
+      },
+      {
+        total_item: 0,
+        total_price: 0,
+      }
+    );
     return {
       ...state,
-      // total_item:,
-      total_item: updatedVal,
-      total_price: FormatPrice,
+      total_item,
+      total_price,
     };
   }
+
+  // if (action.type === "CART_TOTAL_PRICE") {
+  //   let updatedVal = state.cart.reduce((initialVal, curElem) => {
+  //     let { amount } = curElem;
+
+  //     initialVal = initialVal + amount;
+
+  //     console.log(initialVal);
+
+  //     return initialVal;
+  //   }, 0);
+
+  //   let FormatPrice = state.cart.reduce((initialVal, curElem) => {
+  //     let { price, amount } = curElem;
+
+  //     initialVal = initialVal + price * amount;
+
+  //     console.log(initialVal);
+
+  //     return initialVal;
+  //   }, 0);
+  //   return {
+  //     ...state,
+  //     // total_item:,
+  //     total_item: updatedVal,
+  //     total_price: FormatPrice,
+  //   };
+  // }
 
   if (action.type === "SET_DECREMENT") {
     let updatedProduct = state.cart.map((curElem) => {
