@@ -29,55 +29,40 @@ const cartReducer = (state, action) => {
     };
   }
 
-  if (action.type === "CART_ITEM_PRICE_TOTAL") {
-    let total_item = 0,
-      total_price = 0;
-    let initialitem = state.cart.amount;
-    let initialPrice = state.cart.price;
+  if (action.type === "CART_TOTAL_ITEM") {
+    let total_item = state.cart.reduce((initialVal, curElem) => {
+      let { amount } = curElem;
 
-    total_item += initialitem;
-    total_price += initialPrice;
+      initialVal = initialVal + amount;
+
+      console.log(initialVal);
+
+      return initialVal;
+    }, 0);
 
     return {
       ...state,
-      total_item,
-      total_price,
+      // total_item:,
+      total_item: total_item,
     };
   }
+  if (action.type === "CART_TOTAL_PRICE") {
+    let total_price = state.cart.reduce((initialVal, curElem) => {
+      let { price, amount } = curElem;
+      console.log(amount);
 
-  // if (action.type === "CART_TOTAL_ITEM") {
-  //   let total_item = state.cart.reduce((initialVal, curElem) => {
-  //     let { amount } = curElem;
+      initialVal = initialVal + price * amount;
 
-  //     initialVal = initialVal + amount;
+      console.log(initialVal);
 
-  //     console.log(initialVal);
-
-  //     return initialVal;
-  //   }, 0);
-
-  //   return {
-  //     ...state,
-  //     // total_item:,
-  //     total_item: total_item,
-  //   };
-  // }
-  // if (action.type === "CART_TOTAL_PRICE") {
-  //   let total_price = state.cart.reduce((initialVal, curElem) => {
-  //     let { price, amount } = curElem;
-
-  //     initialVal = initialVal + price * amount;
-
-  //     console.log(initialVal);
-
-  //     return initialVal;
-  //   }, 0);
-  //   return {
-  //     ...state,
-  //     // total_item:,
-  //     total_price: total_price,
-  //   };
-  // }
+      return initialVal;
+    }, 0);
+    return {
+      ...state,
+      // total_item:,
+      total_price: total_price,
+    };
+  }
 
   if (action.type === "SET_DECREMENT") {
     let updatedProduct = state.cart.map((curElem) => {
