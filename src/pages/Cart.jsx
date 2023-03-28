@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 // import { SingleMenuProduct } from "../components/SingleMenuProduct";
 import CartItem from "../components/CartItem";
-// import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext";
 const Cart = () => {
   const { cart } = useCartContext();
   // const location = useLocation();
-  console.log(cart);
+  // console.log(cart);
   // const { Cartitems, items } = location.state;
   // // const { ID } = location.state;
   // const [Array, setArray] = useState([]);
