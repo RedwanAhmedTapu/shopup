@@ -71,8 +71,8 @@ const CartItem = (curElem) => {
   // end of Format price
   // ProductImages
   const ImgSrc = image[0].url;
-  console.log(amount);
-  console.log(FormatPrice);
+  // console.log(amount);
+  // console.log(FormatPrice);
 
   // deleting of cartItems
 
