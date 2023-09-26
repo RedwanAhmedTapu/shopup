@@ -14,6 +14,7 @@ const cartReducer = (state, action) => {
       amount: amount,
     };
     console.log(cartProduct);
+
     return {
       ...state,
       cart: [...state.cart, cartProduct],
@@ -29,41 +30,41 @@ const cartReducer = (state, action) => {
     };
   }
 
-  // if (action.type === "CART_TOTAL_ITEM") {
-  //   let total_item = state.cart.reduce((initialVal, curElem) => {
-  //     let { amount } = curElem;
+  if (action.type === "CART_TOTAL_ITEM") {
+    let total_item = state.cart.reduce((initialVal, curElem) => {
+      let { amount } = curElem;
 
-  //     initialVal = initialVal + amount;
+      initialVal = initialVal + amount;
 
-  //     console.log(initialVal);
+      console.log(initialVal);
 
-  //     return initialVal;
-  //   }, 0);
+      return initialVal;
+    }, 0);
 
-  //   return {
-  //     ...state,
-  //     // total_item:,
-  //     total_item: total_item,
-  //   };
-  // }
+    return {
+      ...state,
+      // total_item:,
+      total_item: total_item,
+    };
+  }
 
-  // if (action.type === "CART_TOTAL_PRICE") {
-  //   let total_price = state.cart.reduce((initialVal, curElem) => {
-  //     let { price, amount } = curElem;
-  //     console.log(amount);
+  if (action.type === "CART_TOTAL_PRICE") {
+    let total_price = state.cart.reduce((initialVal, curElem) => {
+      let { price, amount } = curElem;
+      console.log(amount);
 
-  //     initialVal = initialVal + price * amount;
+      initialVal = initialVal + price * amount;
 
-  //     console.log(initialVal);
+      console.log(initialVal);
 
-  //     return initialVal;
-  //   }, 0);
-  //   return {
-  //     ...state,
-  //     // total_item:,
-  //     total_price: total_price,
-  //   };
-  // }
+      return initialVal;
+    }, 0);
+    return {
+      ...state,
+      // total_item:,
+      total_price: total_price,
+    };
+  }
 
   // if (action.type === "SET_DECREMENT") {
   //   let updatedProduct = state.cart.map((curElem) => {

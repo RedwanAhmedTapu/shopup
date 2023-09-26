@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.a249b569.js",
+    "static/media/chinaweb.jpg": "/static/media/chinaweb.b67cfded7ac90c87d890.jpg",
+    "index.html": "/index.html",
+    "main.a249b569.js.map": "/static/js/main.a249b569.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.a249b569.js"
+  ]
+}
