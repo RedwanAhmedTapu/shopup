@@ -46,6 +46,7 @@ const cartReducer = (state, action) => {
   //     total_item: total_item,
   //   };
   // }
+
   // if (action.type === "CART_TOTAL_PRICE") {
   //   let total_price = state.cart.reduce((initialVal, curElem) => {
   //     let { price, amount } = curElem;
@@ -64,26 +65,26 @@ const cartReducer = (state, action) => {
   //   };
   // }
 
-  if (action.type === "SET_DECREMENT") {
-    let updatedProduct = state.cart.map((curElem) => {
-      console.log(curElem.id);
-      if (curElem.id === action.payload) {
-        let decAmount = curElem.amount - 1;
+  // if (action.type === "SET_DECREMENT") {
+  //   let updatedProduct = state.cart.map((curElem) => {
+  //     console.log(curElem.id);
+  //     if (curElem.id === action.payload) {
+  //       let decAmount = curElem.amount - 1;
 
-        if (decAmount <= 1) {
-          decAmount = 1;
-        }
+  //       if (decAmount <= 1) {
+  //         decAmount = 1;
+  //       }
 
-        return {
-          ...curElem,
-          amount: decAmount,
-        };
-      } else {
-        return curElem;
-      }
-    });
-    return { ...state, cart: updatedProduct };
-  }
+  //       return {
+  //         ...curElem,
+  //         amount: decAmount,
+  //       };
+  //     } else {
+  //       return curElem;
+  //     }
+  //   });
+  //   return { ...state, cart: updatedProduct };
+  // }
 
   if (action.type === "SET_INCREMENT") {
     let updatedProduct = state.cart.map((curElem) => {

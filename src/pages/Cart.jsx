@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import { SingleMenuProduct } from "../components/SingleMenuProduct";
 import CartItem from "../components/CartItem";
+import TotalItem from "../components/TotalItem";
 import { useCartContext } from "../context/CartContext";
 const Cart = () => {
   const { cart } = useCartContext();
@@ -33,7 +34,7 @@ const Cart = () => {
       {cart.map((curElem, index) => {
         return <CartItem key={index} {...curElem} />;
       })}
-      {/* <TotalItem cart={cart} /> */}
+      <TotalItem cart={cart} />
     </>
   );
 };
